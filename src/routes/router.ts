@@ -1,18 +1,18 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 import * as controller from "../controllers/controller";
 
-const router = Router();
+const usersRouter = Router();
 
-// log available names
-router.get("/", (req: Request, res: Response) => {
-  console.log("usernames will be logged here - wip");
-  res.sendStatus(200);
-});
+// usersRouter.get("/", (req, res) => {
+//   console.log("usernames will be logged here - wip");
+//   res.sendStatus(200);
+// });
 
-// display form
-router.get("/new", controller.displayForm);
+usersRouter.get("/", controller.getUsers);
 
-// handle submission
-router.post("/new", controller.saveUsername);
+// usersRouter.post("/", (req, res) => {
+//   console.log("username to be saved: ", req.body.username);
+//   res.sendStatus(200);
+// });
 
-export default router;
+export default usersRouter;
