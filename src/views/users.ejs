@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
   </head>
-  <body>
+  <body style="font-family: monospace; background-color: azure">
     <h1><%= title %></h1>
     <form action="/new" method="post">
       <label for="username">Username:</label>
-      <input type="text" name="username" id="username" required />
-      <button type="submit">Submit</button>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="enter username"
+        style="font-family: monospace"
+        required
+      />
+      <button type="submit" style="font-family: monospace; cursor: pointer">
+        Submit
+      </button>
     </form>
   </body>
 </html>
