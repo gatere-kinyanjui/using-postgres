@@ -1,4 +1,5 @@
 import { Client } from "pg";
+import "dotenv/config";
 
 //  Hardcoded local db connection information in the script.
 //  Hence, the script only populates local db
@@ -17,8 +18,7 @@ VALUES
 const main = async () => {
   console.log("seeding...");
   const client = new Client({
-    connectionString:
-      "postgresql://gatere:gK1ny@njui.10@localhost:5432/top_users",
+    connectionString: process.env.CONNECTION_STRING,
   });
 
   await client.connect();
